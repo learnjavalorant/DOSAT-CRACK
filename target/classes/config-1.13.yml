@@ -1,0 +1,387 @@
+#  --------------------------  #
+#    + MADE BY: CamChua_VN +   #
+#       + VERSION: v1.0 +      #
+#  --------------------------  #
+#  ĐỘC QUYỀN BỞI DI HOA STORE  #
+#  --------------------------  #
+
+#Key License:
+license: "XXXX-XXXX-XXXX-XXXX"
+
+#Permissions dành cho Member: pk.on và dosat.help
+
+#Permissions dành cho Admin: dosat.admin
+
+Settings:
+  #Tắt/Bật tính năng hỗ trợ
+  Feature:
+    TruyNaNangCao: true #Truy Nã Nâng Cao
+    KhamNgoc: true #Khảm ngọc
+
+  #Tắt/Bật tính năng chính
+  CheckIP: false #Checkip tránh bug money khi bị truy nã
+  ActionBar: true #Hiển thị ActionBar khi /pk on
+
+  #Định dạng tiền tệ mà bạn muốn hiển thị
+  Format:
+    Money: "$"
+    Points: " Points"
+
+  #Thời gian truy nã khi giết người không bật đồ sát
+  BountyTime: 40
+  #Tiền thưởng truy nã, sẽ tăng dần khi giết càng nhiều người
+  BountyMoney: 20000
+
+  #Thời gian chờ bắt đầu thách đấu
+  StartingTime: 5
+  #Thời gian trận thách đấu diễn ra
+  MatchTime: 300
+
+  #Khu vực cho phép PvP mà không bị truy nã (Tên Region của WorldGuard)
+  PvPZone:
+    - pvp1
+    - pvp2
+
+  #Giao diện GUI khi dùng lệnh /pk
+  PkGui:
+    Name: "&4&lĐồ Sát"
+    Items:
+      Blank:
+        ID: BLACK_STAINED_GLASS_PANE
+        Name: "&r"
+        Slot: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 26, 27, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]
+      RedBlank:
+        ID: ORANGE_STAINED_GLASS_PANE
+        Name: "&r"
+        Slot: [10, 11, 12, 19, 21, 28, 29, 30]
+      BlueBlank:
+        ID: ORANGE_STAINED_GLASS_PANE
+        Name: "&r"
+        Slot: [14, 15, 16, 23, 25, 32, 33, 34]
+      PkOff:
+        ID: BLAZE_ROD
+        Name: "&8[&6&lTắt Đồ Sát Nhân Vật&8]"
+        Lore:
+          - ""
+          - "&7Khi tắt đồ sát, nếu có người"
+          - "&7khác cố tình giết bạn thì họ"
+          - "&7sẽ bị truy nã có tiền thưởng"
+          - ""
+          - "&6&l‣ &eClick vào đây để tắt đồ sát"
+        Glow: true
+        Slot: 20
+      PkOn:
+        ID: BLAZE_ROD
+        Name: "&8[&6&lBật Đồ Sát Nhân Vật&8]"
+        Lore:
+          - ""
+          - "&7Khi bật đồ sát, bạn có thể giết"
+          - "&7những người chơi khác ngay tại"
+          - "&7các khu vực được cho phép đánh"
+          - ""
+          - "&8» &7Nếu giết người không bật đồ"
+          - "&7sát thì bạn sẽ mang tội và sẽ bị"
+          - "&7mọi người truy nã có tiền thưởng"
+          - ""
+          - "&6&l‣ &eClick vào đây để bật đồ sát"
+        Glow: true
+        Slot: 24
+      PkThachDau:
+        ID: NETHER_STAR
+        Name: "&8[&6&lChức Năng Thách Đấu&8]"
+        Lore:
+          - ""
+          - "&7Bạn có thể thách đấu với"
+          - "&7người chơi khác theo thể"
+          - "&7lệ 1v1 ngay tại phòng đấu"
+          - ""
+          - "&8» &7Ngoài ra cả 2 đều có thể"
+          - "&7cá cược ngay khi thách đấu"
+          - ""
+          - "&6&l‣ &eClick vào đây để thách đấu"
+        Slot: 22
+      BountyInfo:
+        ID: BOOK
+        Name: "&8[&6&lThông Tin Truy Nã&8]"
+        Lore:
+          - ""
+          - "&7Thời gian: &e<time>s"
+          - ""
+          - "&7Tiền xóa tội: &a<bounty>$"
+        Glow: true
+        Slot: 13
+      RemoveBounty:
+        ID: emerald
+        Name: "&8[&6&lChức Năng Xóa Tội&8]"
+        Lore:
+          - ""
+          - "&7Để không còn bị truy nã"
+          - "&7thì bạn có thể chọn xóa"
+          - "&7xóa tội truy nã tại đây"
+          - ""
+          - "&6&l‣ &eClick vào đây để xóa tội"
+        Glow: true
+        Slot: 31
+  ThachDauGui:
+    Name: "&8DoSat - Thách đấu người chơi"
+    Format:
+      Name: "&6&lPlayer: &f<player>"
+      Lore:
+        - "&7Click vào để thách đấu"
+    NextPage: "&6&l&oTrang Sau"
+    PreviousPage: "&6&l&oTrang Trước"
+  ChonPhongGui:
+    Name: "&8DoSat - Chọn phòng thách đấu"
+    NextPage: "&6&l&oTrang Sau"
+    PreviousPage: "&6&l&oTrang Trước"
+    WaitingFormat:
+      ID: lime_wool
+      Name: "&6&lRoom Đấu: &a<room>"
+      Lore:
+        - "&fPhòng đấu còn trống..."
+    PlayingFormat:
+      ID: red_wool
+      Name: "&6&lRoom Đấu: &a<room>"
+      Lore:
+        - ""
+        - "&fPhòng này đang thi đấu"
+        - ""
+        - "&8» &7Player: &a<player1>"
+        - ""
+        - "&8» &7Player: &a<player2>"
+        - ""
+        - "&8» &7Loại cược: &b<pricetype>"
+        - ""
+        - "&8» &7Tiền cược: &e<price>"
+    InvitingFormat:
+      ID: yellow_wool
+      Name: "&6&lRoom Đấu: &a<room>"
+      Lore:
+        - ""
+        - "&fPhòng này sắp bắt đầu"
+        - ""
+        - "&8» &7Player: &a<player1>"
+        - ""
+        - "&8» &7Player: &a<player2>"
+        - ""
+        - "&8» &7Loại cược: &b<pricetype>"
+        - ""
+        - "&8» &7Tiền cược: &e<price>"
+  #GUI Truy nã nâng cao
+  TruyNaGui:
+    Name: "&8DoSat - Truy nã người chơi"
+    Format:
+      Name: "&6&lPlayer: &f<player>"
+      Lore:
+        - "&7Click vào để truy nã"
+    NextPage: "&6&l&oTrang Trước"
+    PreviousPage: "&6&l&oTrang Sau"
+  TruyNaListGui:
+    Name: "&8DoSat - Danh sách người chơi bị truy nã"
+    Format:
+      Name: "&6&lPlayer: &f<player>"
+      Lore:
+        - "&7 Người truy nã: &e<owner>"
+        - "&7 Tiền truy nã: &e<price><pricetype>"
+        - "&7Click vào để hiển thị vị trí"
+    NextPage: "&6&l&oTrang Trước"
+    PreviousPage: "&6&l&oTrang Sau"
+    Deselect: "&6&l&oBỏ Theo Dõi"
+
+  KhamNgocGui:
+    Name: "&8DoSat - Khảm Ngọc"
+    Rows: 4
+    SpeedSlot: 19
+    DamageSlot: 21
+    DefenseSlot: 23
+    HealthSlot: 25
+    EmptyGems:
+      ID: BARRIER
+      Name: "&cÔ trống"
+      Lore:
+        - "&fThả ngọc vào đây để trang bị"
+    Items:
+      Blank:
+        ID: BLACK_STAINED_GLASS_PANE
+        Name: "&r"
+        Slot: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 13, 15, 17, 18, 20, 22, 24, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+      Speed:
+        ID: FEATHER
+        Name: "&fNgọc Tốc Hành"
+        Lore:
+          - "&f Khảm ngọc ở ô bên dưới"
+        Slot: [10]
+      Damage:
+        ID: DIAMOND_SWORD
+        Name: "&6Ngọc Hổ Báo"
+        Lore:
+          - "&f Khảm ngọc ở ô bên dưới"
+        Slot: [12]
+      Defense:
+        ID: DIAMOND_CHESTPLATE
+        Name: "&bNgọc Kiên Cường"
+        Lore:
+          - "&f Khảm ngọc ở ô bên dưới"
+        Slot: [14]
+      Health:
+        ID: RED_DYE
+        Name: "&cNgọc Trường Sinh"
+        Lore:
+          - "&f Khảm ngọc ở ô bên dưới"
+        Slot: [16]
+
+  GhepNgocGui:
+    Name: "&8DoSat - Ghép Ngọc"
+    Rows: 5
+
+    # Tỉ lệ thành công khi ghép ngọc
+    MergeChance: 50
+
+    SuccessSound: ENTITY_PLAYER_LEVELUP
+    FailedSound: BLOCK_ANVIL_BREAK
+
+    InputSlot: [19, 21]
+    ResultSlot: 25
+    InputIcon:
+      ID: BARRIER
+      Name: "&cÔ trống"
+      Lore:
+        - "&f Vị trí đặt ngọc cần nâng cấp"
+    ResultIcon:
+      ID: BARRIER
+      Name: "&cÔ trống"
+      Lore:
+        - "&f Ví trí ngọc sau khi nâng cấp"
+    Confirm:
+      ID: ANVIL
+      Name: "&fGhép Ngọc"
+      Lore:
+        - "&f Khi bấm vào đây sẽ xảy ra một trong những hiện tượng sau:"
+        - "&f - Hạt giống vận mệnh kết nối ước mơ. Ánh sáng của duyên thạch"
+        - "&f kết nối nhiều vận mệnh, gắn liền ước mơ của đôi bên, cũng"
+        - "&f giống như ánh sáng này kết nối hai viên ngọc lại với nhau"
+        - "&f tạo thành một viên ngọc mới mang sức mạnh lớn hơn"
+        - "&r"
+        - "&f - Thắp sáng hạt giống hy vọng trên bầu trời. Bất kể xa cách"
+        - "&f bao nhiêu, người đã được vận mệnh an bài đều sẽ được ánh"
+        - "&f sáng của duyên thạch dẫn lối, một viên ngọc đã được ánh sáng"
+        - "&f soi đường dẫn lối nên chỉ có thể giữ lại được một viên ngọc"
+        - "&r"
+        - "&f Cho dù có như thế nào đi chăng nữa thì cũng không được nản"
+        - "&flòng bởi vì vẫn còn rất nhiều điều đang đón chờ bạn phía trước"
+      Slot: 23
+    Items:
+      Blue-Blank:
+        ID: LIGHT_BLUE_STAINED_GLASS_PANE
+        Name: "&r"
+        Slot: [0, 1, 2, 3, 4, 5, 6, 7, 8, 36, 37, 38, 39, 40, 41, 42, 43, 44]
+      Black-Blank:
+        ID: BLACK_STAINED_GLASS_PANE
+        Name: "&r"
+        Slot: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 22, 24, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+
+#Message hiển thị khi dùng lệnh và sử dụng tính năng
+Message:
+  NotPlayer: "&8[&6&lDoSat&8] &cCâu lệnh chỉ dành cho người chơi"
+  HetTruyNa: "&8[&6&lDoSat&8] &eXin chúc mừng, bạn đã hết bị truy nã"
+  BatDoSat: "&8[&6&lDoSat&8] &fHãy chú ý, nhân vật của bạn đã bật đồ sát"
+  TatDoSat: "&8[&6&lDoSat&8] &fNhận vật của bạn đã tắt chế độ đồ sát"
+  IsTruyNa: "&8[&6&lDoSat&8] &fBạn đang bị truy nã không thể tắt đồ sát"
+  BatTruyNa: "&8[&6&lDoSat&8] &fHãy cẩn thận bởi vì bạn đã bị truy nã"
+  NotMoney: "&8[&6&lDoSat&8] &fBạn không có đủ tiền để làm điều này"
+  NotTruyNa: "&8[&6&lDoSat&8] &fNhân vật của bạn hiện không bị truy nã"
+  XoaToi: "&8[&6&lDoSat&8] &eXin chúc mừng, bạn đã xóa tội thành công"
+  InfoTruyNa: "&fThời gian: &e<time>s\n&fTiền xoá tội: &a<bounty>$"
+  MatchStart: "&8[&6&lDoSat&8] &eTrận thách đấu đã bắt đầu"
+  ForceStop: "&8[&6&lDoSat&8] &fTrận đấu đã kết thúc do đối thủ đã thoát, bạn giành chiến thắng"
+  Countdown: "&fTrận đấu sẽ bắt đầu sau &e<time>"
+  Draw: "&8[&6&lDoSat&8] &fHết thời gian thách đấu, trận đấu không được tính"
+  NoPerm: "&8[&6&lDoSat&8] &cBạn không có quyền làm điều này"
+  ArenaExist: "&8[&6&lDoSat&8] &fPhòng đấu đã tồn tại, hãy thử lại lần nữa"
+  ArenaCreated: "&8[&6&lDoSat&8] &fTạo thành công phòng đấu &e<name>"
+  ArenaNotExist: "&8[&6&lDoSat&8] &cPhòng đấu này không tồn tại"
+  ArenaDeleted: "&8[&6&lDoSat&8] &fBạn đã xoá phòng đấu &e<name>"
+  ArenaSpawnSet: "&8[&6&lDoSat&8] &fChỉnh spawn thành công cho &e<name>"
+  ArenaToggle: "&8[&6&lDoSat&8] &fChỉnh thành công cho &e<name> &fthành &e<active>"
+
+  #Thông tin quản lý phòng thách đấu
+  ArenaList:
+    - "&6&lRoom đấu: &f<arena>"
+    - "&8» &7Status: &e<status>"
+    - "&8» &7Active: &e<active>"
+    - "&8» &7Spawn 1: &e<spawn1>"
+    - "&8» &7Spawn 2: &e<spawn2>"
+
+  #Message dùng cho phần thách đấu người chơi
+  NotOnline: "&8[&6&lDoSat&8] &fNgười chơi này hiện không trực tuyến"
+  IsInviting: "&8[&6&lDoSat&8] &fBạn đang có một lời mời, vui lòng đợi trong giây lát"
+  PlayerIsInviting: "&8[&6&lDoSat&8] &fNgười chơi này đang có một lời mời hoặc trong trận, vui lòng đợi trong giây lát"
+  Invited: "&8[&6&lDoSat&8] &fBạn đã thách đấu &e<player> &fvới số tiền &e<money><type>&f, đang chờ phản hồi..."
+  NoInvite: "&8[&6&lDoSat&8] &fBạn không có lời mời thách đấu"
+  RejectInvite: "&8[&6&lDoSat&8] &fTừ chối lời mời thách đấu thành công"
+  InviteRejected: "&8[&6&lDoSat&8] &fLời mời thách đấu đã bị từ chối"
+  NoRoom: "&8[&6&lDoSat&8] &cKhông còn phòng, trận đấu bị huỷ, vui lòng gửi lời mời lại"
+  InviteTimeOut: "&8[&6&lDoSat&8] &fLời mời thách đấu của bạn đã hết hạn"
+  PlayerNotMoney: "&8[&6&lDoSat&8] &cNgười chơi này không đủ tiền thách đấu"
+
+  #Thông tin về lời mời thách đấu được gửi đến
+  ReceiveInvited:
+    - "&fNgười chơi &b<player> &fđã gửi cho bạn lời mời thách đấu"
+    - " &7Mức cược: &e<money><type>"
+    - " &7Đồng ý: &6/pk dongy"
+    - " &7Từ chối: &6/pk tuchoi"
+    - "&fBạn có thời gian &e10s &fđể phản hồi"
+
+  #Nội dung hiển thị khi dùng lệnh /pk help
+  Help:
+    - "&6/pk: &fMở GUI Đồ Sát"
+    - "&6/pk off: &fTắt Đồ Sát"
+    - "&6/pk on: &fBật Đồ Sát"
+    - "&6/pk xoatoi: &fXoá tội nhanh"
+    - "&6/pk truyna: &fXem thông tin truy nã"
+    - "&6/pk truyna <người chơi> <tiền> <loại tiền>: &fTruy nã người khác"
+    - "&6/pk truyna list: &fXem danh sách đang bị truy nã"
+    - "&6/pk create <tên>: &fTạo phòng đấu"
+    - "&6/pk delete <tên>: &fXoá phòng đấu"
+    - "&6/pk setspawn1 <tên>: &fChỉnh spawn 1"
+    - "&6/pk setspawn2 <tên>: &fChỉnh spawn 2"
+    - "&6/pk toggle <tên>: &fBật/tắt phòng đấu"
+    - "&6/pk list: &fDanh sách phòng đấu"
+    - "&6/pk thachdau <tên> <tiền>: &fGửi lời thách đấu"
+    - "&6/pk dongy: &fĐồng ý lời mời thách đấu"
+    - "&6/pk tuchoi: &fTừ chối lời mời thách đấu"
+    - "&6/pk khamngoc: &fMở khảm ngọc"
+    - "&6/pk ghepngoc: &fMở ghép ngọc"
+    - "&6/pk givengoc <loại> <cấp> <số lượng> [tên]: &fLấy ngọc"
+    - "&6/pk nenmau: &fNén máu"
+    - "&6/pk huynenmau: &fHuỷ nén máu"
+    - "&6/pk reload: &fReload các dữ liệu của Plugins"
+
+  #Một số tin nhắn hiển thị khác nữa
+  PlayerIsTruyNa: "&8[&6&lDoSat&8] &fNgười chơi này đang bị truy nã"
+  DoSat: "&8[&6&lDoSat&8] &fHãy cẩn thận vì đồ sát đang bật"
+  TypingBet: "&8[&6&lDoSat&8] &fVui lòng nhập tiền cược &8(&fChat &ehuy &fđể huỷ&8)"
+  TypingPriceType: "&8[&6&lDoSat&8] &fNhập loại tiền cược &8(&eMoney&f, &ePoints&8)&f. &8(&fChat &ehuy &fđể huỷ&8)"
+  RoomBusy: "&8[&6&lDoSat&8] &cBạn không thể chọn tham gia phòng đấu này"
+  KillBounty: "&8[&6&lDoSat&8] &fBạn vừa giết &e<player> &fđang bị truy nã và nhận được &e<bounty>$"
+
+  #Thông báo khi tổng khi người chơi chiến thắng
+  #Muốn tắt thì hãy đặt là WinBroadcast: "none"
+  WinBroadcast: "&fNgười chơi &e<winner> &fvừa thắng &e<loser> &fvà nhận &a<price><pricetype>"
+
+  #Message Truy Nã Nâng Cao
+  TruyNaBroadcast: "&8[&6&lDoSat&8] &fNgười chơi &e<player> &fvừa truy nã &e<target> &fvới số tiền &e<price><pricetype>"
+  InvalidPriceType: "&8[&6&lDoSat&8] &fSai loại tiền. Hiện có: &emoney&f, &epoints"
+  TrackLocation: "&e<player> | <x>,<y>,<y>,<world> | <distance>m"
+  TruyNaReceiveBroadcast: "&8[&6&lDoSat&8] &fNgười chơi &e<player> &fvừa giết &e<target> &fvà nhận được số tiền truy nã là &e<price><pricetype>"
+  TargetNotTruyNa: "&8[&6&lDoSat&8] &fNgười chơi này không bị truy nã"
+  CantRemoveTruyNa: "&8[&6&lDoSat&8] &fBạn không thể xoá truy nã người này"
+  RemoveTruyNa: "&8[&6&lDoSat&8] &e<player> &fvừa xoá truy nã cho &e<target>"
+  FeatureOff: "&8[&6&lDoSat&8] &eTính năng này đã tắt"
+
+  #Message Khảm Ngọc
+  NoGemsType: "&8[&6&lDoSat&8] &eKhông có ngọc loại này"
+  NotGems: "&8[&6&lDoSat&8] &eVui lòng đặt ngọc cần ghép vào ô tương ứng"
+  GemsNotEqualsType: "&8[&6&lDoSat&8] &eVui lòng đặt ngọc cùng loại"
+  GemsNotEqualsLevel: "&8[&6&lDoSat&8] &eVui lòng đặt ngọc cùng cấp độ"
+  GemsMaxLevel: "&8[&6&lDoSat&8] &eNgọc loại này đã đạt cấp độ tối đa"

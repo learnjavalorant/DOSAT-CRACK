@@ -1,0 +1,11 @@
+name: DoSat
+main: camchua.dosat.Main
+version: 1.4.1
+author: [CamChua_VN, Keny]
+depend: [Vault, PlayerPoints, NBTAPI]
+api-version: 1.13
+
+commands:
+  dosat:
+    aliases:
+    - pk

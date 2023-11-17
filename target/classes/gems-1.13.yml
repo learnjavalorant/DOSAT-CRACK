@@ -1,0 +1,55 @@
+Defense:
+  item:
+    id: light_blue_dye
+    name: "&bNgọc Kiên Cường Lv.<level>"
+    lore:
+      - "&f Giúp tăng thêm sức đề kháng của bản thân"
+      - "&fđể chống chọi lại những nhát chém uy lực"
+  attributes:
+    1: 5
+    2: 10
+    3: 15
+  hide-effect:
+    JUMP: 2
+
+
+Speed:
+  item:
+    id: light_gray_dye
+    name: "&fNgọc Tốc Hành Lv.<level>"
+    lore:
+      - "&f Giúp cho bạn di chuyển nhanh hơn như một cơn gió"
+  attributes:
+    1: 0.02
+    2: 0.04
+    3: 0.06
+  hide-effect:
+    JUMP: 2
+
+Damage:
+  item:
+    id: orange_dye
+    name: "&6Ngọc Hổ Báo Lv.<level>"
+    lore:
+      - "&f Giúp cho bạn không sợ thằng nào bằng cách"
+      - "&fgia tăng thêm sát thương bản thân gây ra"
+  attributes:
+    1: 2
+    2: 4
+    3: 6
+  hide-effect:
+    JUMP: 2
+
+Health:
+  item:
+    id: red_dye
+    name: "&cNgọc Trường Sinh Lv.<level>"
+    lore:
+      - "&f Giúp cho bạn sống lâu hơn để cân 5 bằng"
+      - "&fcách gia tăng thêm lượng máu cơ bản cho bản thân"
+  attributes:
+    1: 4
+    2: 6
+    3: 7
+  hide-effect:
+    JUMP: 2
