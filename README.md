@@ -1,0 +1,3 @@
+# DOSAT-CRACK
+DOSATCRACK CRACK CRACK DIHOA NGU CAC
+dihoa rac deo noi nhieu
